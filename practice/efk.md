@@ -60,6 +60,7 @@ $ kubectl apply -f <(istioctl kube-inject -f samples/httpbin/httpbin.yaml)
 使用 `istioctl` 修改配置，打开 Envoy 的访问日志，执行命令：
 ```
 $ istioctl manifest apply --set profile=demo --set values.global.proxy.accessLogFile="/dev/stdout"
+$ istioctl install --set meshConfig.accessLogFile=/dev/stdout
 
 - Applying manifest for component Base...
 ✔ Finished applying manifest for component Base.
